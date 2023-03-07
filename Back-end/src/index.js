@@ -5,6 +5,7 @@ const morgan = require("morgan")
 const cors = require("cors")
 const bodyparser = require ("body-parser")
 const connection = require('./database')
+const pruebaRouters = require('./routers/prueba.route')
 
 //Conectando con la variable de entorno .env
 const PORT = process.env.PORT
@@ -20,6 +21,10 @@ app.set('Port', PORT)
 //bodyparser
 // app.use(bodyparser.urlencoded({extended:true}))
 // app.use(bodyparser.json)
+
+//Rutas
+
+app.use('/api/',pruebaRouters )
 
 //inicializar el servidor
 
